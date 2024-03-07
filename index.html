@@ -30,7 +30,7 @@
         apple.style.top = `-${apple.offsetHeight}px`;
 
         // Randomize fall speed
-        const fallSpeed = Math.random() * 3 + 2; // Adjust for faster or slower animation
+        const fallSpeed = Math.random() * 4 + 3; // Adjust for faster or slower animation
 
         function moveApple() {
             apple.style.top = `${apple.offsetTop + fallSpeed}px`;
@@ -45,7 +45,7 @@
     }
 
     function startRain() {
-        const interval = 300; // Adjust for more or less density of rain
+        const interval = 400; // Adjust for more or less density of rain
         setInterval(createApple, interval);
     }
 
