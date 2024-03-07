@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Rain</title>
+    <title>pomme+</title>
     <style>
         body, html {
             height: 100%;
@@ -30,7 +30,7 @@
         apple.style.top = `-${apple.offsetHeight}px`;
 
         // Randomize fall speed
-        const fallSpeed = Math.random() * 4 + 3; // Adjust for faster or slower animation
+        const fallSpeed = Math.random() * 3 + 2; // Adjust for faster or slower animation
 
         function moveApple() {
             apple.style.top = `${apple.offsetTop + fallSpeed}px`;
@@ -45,7 +45,7 @@
     }
 
     function startRain() {
-        const interval = 400; // Adjust for more or less density of rain
+        const interval = 300; // Adjust for more or less density of rain
         setInterval(createApple, interval);
     }
 
