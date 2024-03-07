@@ -3,32 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pomme plus</title>
+    <title>pomme+</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
             overflow: hidden;
             background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Ensure that the body can act as a reference for absolute positioning */
         }
         .apple {
             position: absolute;
             font-size: 24px;
         }
-        .centered-text {
-            position: absolute; /* Make sure it's on top of the apples */
-            z-index: 10; /* Higher than the apples to ensure visibility */
-            font-size: 48px; /* Larger text size for visibility */
-            text-align: center;
-        }
     </style>
 </head>
 <body>
-<div class="centered-text">i love u apple</div>
 <script>
     function createApple() {
         const apple = document.createElement('div');
