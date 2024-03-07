@@ -3,26 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pomme.plus</title>
+    <title>Apple Rain</title>
     <style>
         body, html {
             height: 100%;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
             background-color: #fff;
-            font-size: 36px;
         }
-
-        div {
-            font-size:48px;
+        .apple {
+            position: absolute;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <p style="font-size:36px;" >i love u apple</p>
-    </div>
+<script>
+    function createApple() {
+        const apple = document.createElement('div');
+        apple.textContent = '🍎';
+        apple.className = 'apple';
+        document.body.appendChild(apple);
+
+        // Set initial position and randomize horizontal position
+        apple.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+        apple.style.top = `-${apple.offsetHeight}px`;
+
+        // Randomize fall speed
+        const fallSpeed = Math.random() * 3 + 2; // Adjust for faster or slower animation
+
+        function moveApple() {
+            apple.style.top = `${apple.offsetTop + fallSpeed}px`;
+            if (apple.offsetTop < window.innerHeight) {
+                requestAnimationFrame(moveApple);
+            } else {
+                apple.remove(); // Remove apple when it goes out of view
+            }
+        }
+
+        moveApple();
+    }
+
+    function startRain() {
+        const interval = 300; // Adjust for more or less density of rain
+        setInterval(createApple, interval);
+    }
+
+    startRain();
+</script>
 </body>
 </html>
